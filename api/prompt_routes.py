@@ -1,6 +1,7 @@
 from fastapi import APIRouter
 from models.prompt_model import Prompt
 from utils.prompt_utils import process_prompt
+from utils.config import settings
 
 router = APIRouter()
 

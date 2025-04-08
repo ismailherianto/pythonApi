@@ -1,5 +1,15 @@
-from app.main import app  # not "from app import main"
+from app.main import app
 
 if __name__ == "__main__":
     import uvicorn
-    uvicorn.run(app, host="127.0.0.1", port=8000)
+    import os
+    from dotenv import load_dotenv
+
+    load_dotenv()
+
+    app_host = os.getenv("APP_HOST")  
+    app_port = int(os.getenv("APP_PORT"))  
+
+    print(f"🚀 Starting server at http://{app_host}:{app_port}")
+
+    uvicorn.run(app, host=app_host, port=app_port)
