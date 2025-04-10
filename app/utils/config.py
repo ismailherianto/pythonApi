@@ -7,6 +7,7 @@ class Settings(BaseSettings):
     api_key: str = "default"
     app_host: str
     app_port: int
+    gemini_api_key: str
 
     class Config:
         env_file = ".env"
